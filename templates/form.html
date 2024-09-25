@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/styles.css">
+    <title>Asset Management Form</title>
+</head>
+<body>
+    <h1>Asset Management Form</h1>
+    <form action="/submit" method="POST">
+        <label for="asset_number">Asset #</label>
+        <input type="text" id="asset_number" name="asset_number" required><br>
+
+        <label for="system_name">System Name</label>
+        <input type="text" id="system_name" name="system_name" required><br>
+
+        <label for="status">Status</label>
+        <input type="text" id="status" name="status" required><br>
+
+        <label for="assigned_to">Assigned To</label>
+        <input type="text" id="assigned_to" name="assigned_to" required><br>
+
+        <label for="asset_type">Asset Type</label>
+        <input type="text" id="asset_type" name="asset_type" required><br>
+
+        <label for="location">Location</label>
+        <input type="text" id="location" name="location" required><br>
+
+        <label for="manufacturer">Manufacturer</label>
+        <input type="text" id="manufacturer" name="manufacturer"><br>
+
+        <label for="model">Model</label>
+        <input type="text" id="model" name="model"><br>
+
+        <label for="color">Color</label>
+        <input type="text" id="color" name="color"><br>
+
+        <label for="serial_number">Serial #</label>
+        <input type="text" id="serial_number" name="serial_number"><br>
+
+        <label for="mac">MAC</label>
+        <input type="text" id="mac" name="mac"><br>
+
+        <label for="purchase_date">Purchase Date</label>
+        <input type="date" id="purchase_date" name="purchase_date"><br>
+
+        <label for="issue_date">Issue Date</label>
+        <input type="date" id="issue_date" name="issue_date"><br>
+
+        <label for="return_date">Return Date</label>
+        <input type="date" id="return_date" name="return_date"><br>
+
+        <label for="warranty_expire_date">Warranty Expire Date</label>
+        <input type="date" id="warranty_expire_date" name="warranty_expire_date"><br>
+
+        <label for="condition">Condition</label>
+        <input type="text" id="condition" name="condition"><br>
+
+        <label for="notes">Notes</label>
+        <textarea id="notes" name="notes"></textarea><br>
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

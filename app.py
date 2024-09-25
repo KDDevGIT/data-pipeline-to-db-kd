@@ -1,11 +1,11 @@
 from flask import Flask, render_template, request, redirect
 from models import db, Asset
-from datetime import datetime
+from config import Config
 
 app = Flask(__name__)
 
-# Configuration (load from config.py)
-app.config.from_object('config')
+# Load configuration from config.py
+app.config.from_object(Config)
 
 # Initialize the database
 db.init_app(app)
@@ -16,7 +16,7 @@ def form():
 
 @app.route('/submit', methods=['POST'])
 def submit():
-    # Get form data
+    # Extract form data
     asset_number = request.form['asset_number']
     system_name = request.form['system_name']
     status = request.form['status']
@@ -35,7 +35,7 @@ def submit():
     condition = request.form['condition']
     notes = request.form['notes']
 
-    # Create a new asset record
+    # Create a new Asset object
     new_asset = Asset(
         asset_number=asset_number,
         system_name=system_name,
@@ -48,15 +48,15 @@ def submit():
         color=color,
         serial_number=serial_number,
         mac=mac,
-        purchase_date=datetime.strptime(purchase_date, '%Y-%m-%d'),
-        issue_date=datetime.strptime(issue_date, '%Y-%m-%d'),
-        return_date=datetime.strptime(return_date, '%Y-%m-%d'),
-        warranty_expire_date=datetime.strptime(warranty_expire_date, '%Y-%m-%d'),
+        purchase_date=purchase_date,
+        issue_date=issue_date,
+        return_date=return_date,
+        warranty_expire_date=warranty_expire_date,
         condition=condition,
         notes=notes
     )
-    
-    # Add to the database
+
+    # Add and commit the new asset to the database
     db.session.add(new_asset)
     db.session.commit()
 
