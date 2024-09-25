@@ -5,62 +5,125 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/static/styles.css">
     <title>Asset Management Form</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .form-container {
+            width: 50%;
+            margin: 0 auto;
+            background-color: #2058f1;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        form {
+            display: grid;
+            grid-template-columns: 150px 1fr;
+            grid-gap: 10px;
+            align-items: center;
+        }
+
+        label {
+            text-align: right;
+            padding-right: 10px;
+        }
+
+        input[type="text"],
+        input[type="date"],
+        textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        button {
+            grid-column: span 2;
+            padding: 10px 20px;
+            background-color: #48494c;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #535453;
+        }
+
+    </style>
 </head>
 <body>
     <h1>Asset Management Form</h1>
-    <form action="/submit" method="POST">
-        <label for="asset_number">Asset #</label>
-        <input type="text" id="asset_number" name="asset_number" required><br>
+    <div class="form-container">
+        <form action="/submit" method="POST">
+            <label for="asset_number">Asset #</label>
+            <input type="text" id="asset_number" name="asset_number" required>
 
-        <label for="system_name">System Name</label>
-        <input type="text" id="system_name" name="system_name" required><br>
+            <label for="system_name">System Name</label>
+            <input type="text" id="system_name" name="system_name" required>
 
-        <label for="status">Status</label>
-        <input type="text" id="status" name="status" required><br>
+            <label for="status">Status</label>
+            <input type="text" id="status" name="status" required>
 
-        <label for="assigned_to">Assigned To</label>
-        <input type="text" id="assigned_to" name="assigned_to" required><br>
+            <label for="assigned_to">Assigned To</label>
+            <input type="text" id="assigned_to" name="assigned_to" required>
 
-        <label for="asset_type">Asset Type</label>
-        <input type="text" id="asset_type" name="asset_type" required><br>
+            <label for="asset_type">Asset Type</label>
+            <input type="text" id="asset_type" name="asset_type" required>
 
-        <label for="location">Location</label>
-        <input type="text" id="location" name="location" required><br>
+            <label for="location">Location</label>
+            <input type="text" id="location" name="location" required>
 
-        <label for="manufacturer">Manufacturer</label>
-        <input type="text" id="manufacturer" name="manufacturer"><br>
+            <label for="manufacturer">Manufacturer</label>
+            <input type="text" id="manufacturer" name="manufacturer">
 
-        <label for="model">Model</label>
-        <input type="text" id="model" name="model"><br>
+            <label for="model">Model</label>
+            <input type="text" id="model" name="model">
 
-        <label for="color">Color</label>
-        <input type="text" id="color" name="color"><br>
+            <label for="color">Color</label>
+            <input type="text" id="color" name="color">
 
-        <label for="serial_number">Serial #</label>
-        <input type="text" id="serial_number" name="serial_number"><br>
+            <label for="serial_number">Serial #</label>
+            <input type="text" id="serial_number" name="serial_number">
 
-        <label for="mac">MAC</label>
-        <input type="text" id="mac" name="mac"><br>
+            <label for="mac">MAC</label>
+            <input type="text" id="mac" name="mac">
 
-        <label for="purchase_date">Purchase Date</label>
-        <input type="date" id="purchase_date" name="purchase_date"><br>
+            <label for="purchase_date">Purchase Date</label>
+            <input type="date" id="purchase_date" name="purchase_date">
 
-        <label for="issue_date">Issue Date</label>
-        <input type="date" id="issue_date" name="issue_date"><br>
+            <label for="issue_date">Issue Date</label>
+            <input type="date" id="issue_date" name="issue_date">
 
-        <label for="return_date">Return Date</label>
-        <input type="date" id="return_date" name="return_date"><br>
+            <label for="return_date">Return Date</label>
+            <input type="date" id="return_date" name="return_date">
 
-        <label for="warranty_expire_date">Warranty Expire Date</label>
-        <input type="date" id="warranty_expire_date" name="warranty_expire_date"><br>
+            <label for="warranty_expire_date">Warranty Expire Date</label>
+            <input type="date" id="warranty_expire_date" name="warranty_expire_date">
 
-        <label for="condition">Condition</label>
-        <input type="text" id="condition" name="condition"><br>
+            <label for="condition">Condition</label>
+            <input type="text" id="condition" name="condition">
 
-        <label for="notes">Notes</label>
-        <textarea id="notes" name="notes"></textarea><br>
+            <label for="notes">Notes</label>
+            <textarea id="notes" name="notes"></textarea>
 
-        <button type="submit">Submit</button>
-    </form>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
 </body>
 </html>
